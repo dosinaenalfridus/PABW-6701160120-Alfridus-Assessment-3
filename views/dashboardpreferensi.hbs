@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+        integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <script type = "text/javascript"
+        src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script> 
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Dosionara</title>
+</head>
+<body>
+<nav class="grey darken-3">
+    <div class="nav-wrapper container">
+        <a href="#!" class="brand-logo center">Dosionara</a>
+    </div>
+</nav>
+<!-- Header and side nav -->
+
+<div class="container">
+<h3>Bobot Preferensi</h3>
+
+{{#if infor}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>KODE</th>
+            <th>NRR <= </th>
+            <th>JPO <= </th>
+            <th>JTO </th>
+            <th>BOBOT</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each infor}}
+        <tr>
+            <td> {{kode}} </td>
+            <td> {{nnr}} </td>
+            <td> {{jpo}} </td>
+            <td> {{jto}} </td>
+            <td> {{bobot}} </td>
+            
+            <td>
+                <a href="/saw/edit/{{_id}}" class="btn btn-float">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </td> 
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>No Informasi Posted</p>
+{{/if}}
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js"
+            integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
+
+        <script>
+            M.Sidenav.init(document.querySelector('.sidenav'))
+            M.FormSelect.init(document.querySelector('#status'))
+            CKEDITOR.replace('body', {
+                plugins: 'wysiwygarea, toolbar, basicstyles, link'
+            })
+        </script>
+        <script >
+            var currYear = (new Date()).getFullYear();
+                $(document).ready(function() {
+                    $(".datepicker").datepicker({
+                        defaultDate: new Date(currYear,1,31),
+                        // setDefaultDate: new Date(2000,01,31),
+                        maxDate: new Date(currYear,08,01),
+                        yearRange: [2020, currYear],
+                        format: "yyyy/mm/dd"    
+                    });
+                });
+        </script>
+
+    </div>
+</body>

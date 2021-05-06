@@ -14,6 +14,7 @@ module.exports = function (passport) {
     async(accessToken, refreshToken, profile, done) => {
         const newUser = {
                     googleId: profile.id,
+                    hasRole: profile.hasRole,
                     displayName: profile.displayName,
                     firstName: profile.name.givenName,
                     lastName: profile.name.familyName,

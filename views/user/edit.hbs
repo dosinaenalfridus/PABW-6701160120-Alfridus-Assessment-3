@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+        integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Dosionara</title>
+</head>
+<body>
+<nav class="grey darken-3">
+    <div class="nav-wrapper container">
+
+        <a href="#!" class="brand-logo center">Dosionara</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="/userbrain/informasi">Informasi Beasiswa</a></li>
+            <li><a href="/dashboard_user">Dashboard</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- Header and side nav -->
+<div class="container">
+<h3>Registrasi Beasiswa</h3>
+<div class="row">
+    <form action="/userbrain/{{infor._id}}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="nama" name="nama" value="{{infor.nama}}">
+                <label for="nama">Nama</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="kelas" name="kelas" value="{{infor.kelas}}">
+                <label for="kelas">Kelas</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="nis" name="nis" value="{{infor.nis}}">
+                <label for="nama">NISN</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="nilai" name="nilai" value="{{infor.nilai}}">
+                <label for="nilai">Nilai Rata-rata Raport</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="penghasilan" name="penghasilan" value="{{infor.penghasilan}}">
+                <label for="penghasilan">Penghasilan Orang Tua</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="tanggungan" name="tanggungan" value="{{infor.tanggungan}}">
+                <label for="tanggungan">Tanggungan Orang Tua</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="sekolah" name="sekolah" value="{{infor.sekolah}}">
+                <label for="sekolah">Nama Sekolah</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="alamatsekolah" name="alamatsekolah" value="{{infor.alamatsekolah}}">
+                <label for="alamatsekolah">Alamat Sekolah</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="alamatrumah" name="alamatrumah" value="{{infor.alamatrumah}}">
+                <label for="alamatrumah">Alamat Tempat Tinggal Saat Ini</label>
+            </div>
+            <div class="file-field input-field col s6">
+            <div class="btn">
+                <span>File</span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" id="scanNilai" name="scanNilai" placeholder="Upload scan nilai raport" value="{{infor.scanNilai}}">
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard_user" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+    <!-- addition source -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js"
+                integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
+
+            <script>
+                M.Sidenav.init(document.querySelector('.sidenav'))
+                M.FormSelect.init(document.querySelector('#status'))
+                CKEDITOR.replace('body', {
+                    plugins: 'wysiwygarea, toolbar, basicstyles, link'
+                })
+            </script>
+        </div>
+    </div>
+</body>

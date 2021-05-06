@@ -20,6 +20,10 @@ const UserSchema = new mongoose.Schema({
     image: {
         type: String
     },
+    hasRole:{
+        type: String,
+        default: 'public'
+    },
     createdAt:{
         type: Date,
         default: Date.now

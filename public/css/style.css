@@ -1,22 +1,69 @@
-p{
-    margin: 10px 0 !important;
+* {
+  margin: 0;
 }
 
-.login-container{
-    width: 400px;
-    margin-top: 50px;
-    text-align: center;
+body {
+  background: linear-gradient(to bottom, #4db6ac -18%, #ff9999 116%);
+  background-repeat: no-repeat;
+  height: 670px;
 }
 
-.fa-small {
-    font-size: 16px !important;
+.img img {
+  width: 100%;
+  padding-top: 20px;
+  box-shadow: darkgray;
 }
 
-.btn-float {
-    float: left;
-    margin-right: 10px;
+.card {
+  position: relative;
+  height: 350px;
+  margin-top: -625px;
 }
 
-.img-small {
-    width: 180px;
+.card p {
+  text-align: justify;
+}
+
+.chip {
+  background-color: aqua;
+  font-size:11px;
+  height: fit-content;
+}
+
+.card a {
+  margin-top: 110px;
+  margin-right: 5px;
+}
+
+#regis {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  opacity: 0.7;
+}
+
+#notif {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  height: 400px;
+  padding: 20px;
+  opacity: 0.7;
+  text-align: justify;
+}
+
+h6 {
+  opacity: 0.5;
+}
+
+#span {
+  opacity: 0.4;
+}
+
+#img-notif {
+  margin-top: -20px;
+  border-radius: 5px;
+  box-shadow: azure;
+  width: 462px;
+  height: 400px;
+  opacity: 0.7;
 }

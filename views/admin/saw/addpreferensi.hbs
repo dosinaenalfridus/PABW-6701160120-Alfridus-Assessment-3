@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+        integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script> 
+
+
+      <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      
+
+
+    <title>Dosionara</title>
+</head>
+<body>
+<nav class="grey darken-3">
+    <div class="nav-wrapper container">
+
+        <a href="#!" class="brand-logo center">Dosionara</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i class="fas fa-bars"></i></a>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="/dashboard_admin">Dashboard</a></li>
+            <li><a href="/dashboardregis">Peminat Beasiswa</a></li>
+            <li><a href="/dashboardpreferensi">Bobot Preferensi</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- Header and side nav -->
+
+<div class="container">
+<!--content -->
+<h3>Bobot Preferensi</h3>
+<div class="row">
+    <form action="/saw" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="kode" name="kode">
+                <label for="kode">Kode</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="nnr" name="nnr">
+                <label for="nnr">Min Nilai Rata-rata</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="jpo" name="jpo">
+                <label for="jpo">Jumlah Penghasilan Orang Tua</label>
+            </div>
+        </div>
+         <div class="row">
+            <div class="input-field">
+                <input type="text" id="jto" name="jto">
+                <label for="jto">Jumlah Tanggungan Orang Tua</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="bobot" name="bobot">
+                <label for="bobot">Bobot</label>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboardpreferensi" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>
+
+<!-- others source -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js"
+            integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
+
+        <script>
+            M.Sidenav.init(document.querySelector('.sidenav'))
+            M.FormSelect.init(document.querySelector('#status'))
+            M.Datepicker.getInstance('#endDate')
+            CKEDITOR.replace('body', {
+                plugins: 'wysiwygarea, toolbar, basicstyles, link,' + 'justify,'
+            })
+        </script>
+        
+        <script>           
+               $(document).ready(function(){
+                    $('.datepicker').datepicker();
+                });
+      </script>
+    </div>
+</body>

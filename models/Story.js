@@ -1,28 +1,40 @@
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema;
 
-const StorySchema = new mongoose.Schema({
+let StorySchema = new Schema({
     title: {
-        type: String,
-        required: true,
-        trim: true
+        type: String
+    },
+    kuota: {
+        type: Number
     },
     body: {
-        type: String,
-        required: true
+        type: String
     },
     status: {
         type: String,
-        default: 'public',
-        enum: ['public', 'private']
+        default: 'private',
+        enum: ['private', 'public']
     },
+    nama: 
+        {
+          type: Schema.Types.ObjectId,
+          ref: "Userbrain"
+        }
+      ,
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        type: Schema.Types.ObjectId,
+        ref: 'Userbrain'
     },
     createdAt:{
         type: Date,
         default: Date.now
-    }
+    },
+    
+    endDate:{
+        type: Date,
+        default: Date.now
+    },
 })
 
 module.exports = mongoose.model('Story', StorySchema)

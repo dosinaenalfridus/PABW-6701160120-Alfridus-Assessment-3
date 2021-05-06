@@ -6,6 +6,7 @@ const morgan = require('morgan')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const passport = require('passport')
+const cors = require('cors')
 const session = require('express-session')
 const MongoStore = require('connect-mongo') (session)
 const connectDB = require('./config/db')
@@ -50,8 +51,9 @@ app.engine('.hbs', exphbs({helpers: {
   truncate,
   editIcon,
   select,
-}, defaultLayout: 'main', extname: '.hbs'}))
-app.set('view engine', '.hbs')
+}, defaultLayout:'',  extname: '.hbs'}))
+app.set('view engine', '.hbs');
+app.set('view options', { layout: 'index' });
 
 //session
 app.use(session({
@@ -77,8 +79,15 @@ app.use(express.static(path.join(__dirname, 'public')))
 //routes
 app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
-app.use('/stories', require('./routes/stories'))
+app.use('/userbrain', require('./routes/userbrain'))
+app.use('/admin', require('./routes/admin'))
+app.use('/saw', require('./routes/saw'))
 
+// const controller = require('./routes/controller');
+// app.use('/getRecomendation', controller.getRecomendation);
+
+// const controllerr = require('./routes/controllerr');
+// app.use('/getRecomendation', controllerr.getRecomendation);
  
 const PORT = process.env.PORT || 3000 
 

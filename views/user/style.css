@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 25px;
+    background: linear-gradient(to bottom, #4db6ac -18%, #ff9999 116%);
+}

@@ -1,1 +1,2 @@
 readme
+MONGO_URI = mongodb+srv://master_DB:goenek2016@pa.z9ekn.mongodb.net/amal_DB?retryWrites=true&w=majority

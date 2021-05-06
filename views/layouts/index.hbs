@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+      <link rel="stylesheet" href="/css/style.css" />
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>AmalSolution-Beasiswa</title>
+    </head>
+
+    <body>
+      <div class="container"> 
+          <div class="img">
+              <img src="/img/main.svg" />
+          </div>
+          <div class="row">
+            {{#each infor}}
+                <div class="col s12 m6 right">
+                    <div class="card teal lighten-2">
+                        <div class="card-content white-text">
+                            <span class="card-title">Beasiswa Amal Solution</span>
+                            <div class="chip">
+                                <span>Kuota Beasiswa : {{{kuota}}}</span>
+                            </div>
+                            <small> |  posted at {{formatDate createdAt 'MMMM DD/YYYY'}}</small>
+                            <br>
+                            <br>
+                            <p>
+                                {{{body}}}
+                            </p>
+                        </div>
+                            <a href="/auth/google" class="waves-effect waves-light btn right" href=""><i class="material-icons right">arrow_downward</i>next step</a>
+                        </div> 
+                    </div>
+            {{else}}
+            <p>No informasi to display</p>
+            {{/each}}
+          </div>
+            </div>
+            </div>
+        </div>
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="/js/materialize.min.js"></script>
+    </body>
+</html>

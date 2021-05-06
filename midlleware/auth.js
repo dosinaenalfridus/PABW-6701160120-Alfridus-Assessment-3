@@ -6,11 +6,12 @@ module.exports = {
             res.redirect('/')
         }
     },
+
     ensureGuest: function (req, res, next) {
         if (req.isAuthenticated()) {
-            res.redirect('/dashboard')
+            res.redirect('/dashboard_admin')
         } else {
             return next()
         }
-    },
+    }
 }
