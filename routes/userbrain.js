@@ -44,6 +44,21 @@ router.post('/registrasi', ensureAuth, async (req, res) => {
   }
 })
 
+//@desc Admin Scholarship Result
+//@router   GET /
+router.get('/scholarshipresult', async (req, res) => {
+  try {
+    const infor = await Story.find({ status: 'public' }).lean()
+    //landing page
+    res.render('admin/scholarshipresult', {
+      infor
+    });
+  } catch (err) {
+    console.error(err)
+    res.render('error/500')
+  }
+})
+
 //@desc kelola registrasi form
 //@router   POST /userbrain/registrasi
 router.get('/notification', async (req, res) => {

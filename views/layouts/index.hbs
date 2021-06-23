@@ -25,23 +25,24 @@
                             <div class="chip">
                                 <span>Kuota Beasiswa : {{{kuota}}}</span>
                             </div>
-                            <small> |  posted at {{formatDate createdAt 'MMMM DD/YYYY'}}</small>
+                            <small> |  end date  {{formatDate endDate 'MMMM DD/YYYY'}}</small>
                             <br>
                             <br>
                             <p>
                                 {{{body}}}
                             </p>
                         </div>
-                            <a href="/auth/google" class="waves-effect waves-light btn right" href=""><i class="material-icons right">arrow_downward</i>next step</a>
-                        </div> 
-                    </div>
+                            <a href="/auth/google" class="waves-effect waves-light btn right"><i class="material-icons right">arrow_downward</i>next step</a>
+                            <a href="/userbrain/scholarshipresult" class="waves-effect waves-light btn pink lighten-3 right"><i class="material-icons right">notifications_active</i>Result</a>
+                    </div> 
+                </div>
             {{else}}
             <p>No informasi to display</p>
             {{/each}}
           </div>
-            </div>
-            </div>
-        </div>
+            {{!-- <a href="/auth/google" class="waves-effect waves-light btn left"  href=""><i class="material-icons right">arrow_downward</i>next step</a> --}}
+            {{!-- <a class="btn-floating btn-large waves-effect waves-light red" id="resultbtn"><i class="material-icons"></i></a> --}}
+      </div>
 
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="/js/materialize.min.js"></script>

@@ -4,6 +4,7 @@ const { ensureAuth} = require('../midlleware/auth')
 const Userbrain = require('../models/Userbrain')
 const Story = require('../models/Story')
 const User = require('../models/User')
+const Saw = require('../models/Saw')
 const { request } = require('express')
 const { findByIdAndUpdate } = require('../models/Story')
 
@@ -15,6 +16,67 @@ router.get('/', async (req, res) => {
     const infor = await Story.find({ status: 'public' }).lean()
     //landing page
     res.render('admin/index', {
+      infor
+    });
+  } catch (err) {
+    console.error(err)
+    res.render('error/500')
+  }
+})
+
+//@desc Admin scholarship page
+//@router   GET /
+router.get('/scholarship', async (req, res) => {
+  try {
+    const infor = await Story.find().lean()
+    //landing page
+    res.render('admin/scholarship', {
+      infor
+    });
+  } catch (err) {
+    console.error(err)
+    res.render('error/500')
+  }
+})
+
+//@desc Admin rulesofsaw
+//@router   GET /admin/add
+router.get('/rulesofsaw', async (req, res) => {
+  const infor = await Saw.find().lean()
+  res.render('admin/rulesofsaw', {
+    infor 
+  })
+})
+
+  // @desc    Admin rulesofsaw edit page
+  // @route   GET /admin/edit/:id
+  router.get('/editSaw/:id', async (req, res) => {
+    try {
+      const infor = await Saw.findOne({
+        _id: req.params.id,
+      }).lean()
+  
+      if (!infor) {
+        return res.render('error/404')
+      }
+      else {
+        res.render('admin/rulesofsawedit', {
+          infor,
+        })
+      }
+    } catch (err) {
+      console.error(err)
+      return res.render('error/500')
+    }
+  })
+
+//@desc Admin Scholarship Result
+//@router   GET /
+router.get('/scholarshipresult', async (req, res) => {
+  try {
+    const infor = await Story.find({ status: 'public' }).lean()
+    //landing page
+    res.render('admin/scholarshipresult', {
       infor
     });
   } catch (err) {

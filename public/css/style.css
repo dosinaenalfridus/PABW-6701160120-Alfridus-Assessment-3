@@ -31,7 +31,7 @@ body {
 }
 
 .card a {
-  margin-top: 110px;
+  margin-top: 40px;
   margin-right: 5px;
 }
 
@@ -66,4 +66,10 @@ h6 {
   width: 462px;
   height: 400px;
   opacity: 0.7;
+}
+
+#resultbtn {
+  margin-top: -290px;
+  width: 80px;
+  height: 80px;
 }
