@@ -1,5 +1,5 @@
 TEST
-  1. clone git
+  1. clone repo
   2. `npm install`
   3. `npm run dev`
   4. open in browser localhost:3000
