@@ -1,2 +1,6 @@
-readme
-MONGO_URI = mongodb+srv://master_DB:goenek2016@pa.z9ekn.mongodb.net/amal_DB?retryWrites=true&w=majority
+TEST
+  1. clone git
+  2. `npm install`
+  3. `npm run dev`
+  4. open in browser localhost:3000
+  5. for admin view, manually open `localhost:3000/admin/`
